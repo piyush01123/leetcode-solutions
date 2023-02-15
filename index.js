@@ -9,9 +9,9 @@ const destination_folder = "leetcode_solutions"
 const solutions_branch = "leetcode"
 const owner = context.repo.owner;
 const repo = context.repo.repo;
-const leetcodeCSRFToken = core.getInput('leetcode-csrf-token');
-const leetcodeSession = core.getInput('leetcode-session');
-const githubToken = core.getInput('github-token');
+const leetcodeCSRFToken = process.env.LEETCODE_CSRF_TOKEN;
+const leetcodeSession = process.env.LEETCODE_SESSION;
+const githubToken = process.env.GITHUB_TOKEN;
 const octokit = new Octokit({
 	auth: githubToken,
 	userAgent: 'LeetCode sync to GitHub - GitHub Action',
